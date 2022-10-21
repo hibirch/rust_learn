@@ -1,6 +1,14 @@
+#[derive(Debug)]
+
 struct Rectangle {
     width: u32,
     length: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.length
+    }
 }
 
 fn main() {
@@ -9,9 +17,7 @@ fn main() {
         length: 50,
     };
 
-    println!("{}", area(&rect))
-}
+    println!("{}", rect.area());
 
-fn area(rect: &Rectangle) -> u32 {
-    rect.width * rect.length
+    println!("{:#?}", rect);
 }
