@@ -1,5 +1,6 @@
 use std::fmt::{self, Display, Formatter};
 
+// 'static 是生命周期
 struct City {
     name: &'static str,
     // 纬度
