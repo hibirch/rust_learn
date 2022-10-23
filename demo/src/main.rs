@@ -1,12 +1,9 @@
-use std::convert::TryInto;
-
 fn main() {
-    let a: i32 = 10;
-    let b: u16 = 100;
+    println!("{}", update_light("red"));
+}
 
-    let b_ = b.try_into().unwrap();
-
-    if a < b_ {
-        println!("Ten i less than one hundred.")
-    }
+fn update_light(current: &str) -> String {
+    const COLORS: [&str; 3] = ["green", "yellow", "red"];
+    COLORS[(COLORS.iter().position(|&s| s == current).unwrap() + 1) % 3].to_owned()
+    // (COLORS.iter().position(|&s| s == current).unwrap() + 1) % 3
 }
